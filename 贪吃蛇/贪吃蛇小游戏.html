@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>贪吃蛇游戏</title>
+</head>
+<body onload="start()">
+    <canvas id="myCanvas" width="600px" height="600px"></canvas>
+    <br/>
+    <button onclick="hardStrat()">难度高</button>
+    <button onclick="normalStrat()">难度中</button>
+    <button onclick="easyStrat()">难度低</button>
+
+    <script>
+        //获取画布
+        let c=document.getElementById("myCanvas");
+        let cxt=c.getContext("2d");
+
+        //定义常量
+        let i;
+        let l=4;
+        let snake=[];
+        let foodX;
+        let foodY;
+        let moveTo=3;//向右走
+
+        //确定蛇的起始位置左上角点
+        function start(){
+            for(i=0;i<l;i++){
+                snake[i]={x:50*i,y:0}
+            }
+            addFood();
+            draw();
+        }
+
+        //确定食物左上角点
+        function addFood(){
+            foodX=Math.floor(Math.random()*12)*50;
+            foodY=Math.floor(Math.random()*12)*50;
+        }
+
+        function draw(){
+            //制作矩形
+            cxt.fillStyle="yellow";
+            cxt.fillRect(0,0,600,600);
+
+            //制作网格
+            for(i=0;i<13;i++){
+                cxt.moveTo(50*i,0);
+                cxt.lineTo(50*i,600);
+                cxt.moveTo(0,50*i);
+                cxt.lineTo(600,50*i);
+                cxt.strokeStyle="black";
+                cxt.stroke();
+            }
+
+            //画蛇身体
+            for(i=0;i<snake.length;i++){
+                cxt.beginPath();
+                cxt.fillStyle="red";
+                cxt.fillRect(snake[i].x,snake[i].y,50,50);
+                cxt.moveTo(snake[i].x,snake[i].y);
+                cxt.lineTo(snake[i].x+50,snake[i].y);
+                cxt.lineTo(snake[i].x+50,snake[i].y+50);
+                cxt.lineTo(snake[i].x,snake[i].y+50);
+                cxt.lineTo(snake[i].x,snake[i].y);
+                cxt.strokeStyle="blue";
+                cxt.stroke();
+            }
+
+            //画食物
+            cxt.fillStyle="green";
+            cxt.fillRect(foodX,foodY,50,50);
+        }
+
+        //蛇移动增减长度
+        function move(){
+            switch(moveTo){
+                case 1://左
+                snake.push({x:snake[snake.length-1].x-50,y:snake[snake.length-1].y});
+                break;
+                case 2://上
+                snake.push({x:snake[snake.length-1].x,y:snake[snake.length-1].y-50});
+                break;
+                case 3://右
+                snake.push({x:snake[snake.length-1].x+50,y:snake[snake.length-1].y});
+                break;
+                case 4://下
+                snake.push({x:snake[snake.length-1].x,y:snake[snake.length-1].y+50});
+                break;
+            }
+            snake.shift();
+            eat();
+            draw();
+            dead();
+        }
+
+        //键盘方向控制
+        function keyDown(e){
+            switch(e.keyCode){
+                case 37://左
+                moveTo=1;
+                break;
+                case 38://上
+                moveTo=2;
+                break;
+                case 39://右
+                moveTo=3;
+                break;
+                case 40://下
+                moveTo=4;
+                break;
+            }
+        }
+
+        //蛇碰到食物的变化
+        function eat(){
+            if(snake[snake.length-1].x == foodX  &&  snake[snake.length-1].y == foodY){
+                l++;
+                addFood();
+                draw();
+                snake.unshift({x:-50,y:-50});
+            }
+        }
+
+        //gameover
+        function dead(){
+            //撞墙
+            if(snake[snake.length-1].x < 0 || snake[snake.length-1].x > 550 ||snake[snake.length-1].y < 0 ||snake[snake.length-1].y > 550){
+                alert("为什么要想不开呢？")
+                window.location.reload();
+            }
+
+            //撞到自己
+        }
+
+        //高难度
+        function hardStrat(){
+            setInterval(move,100);
+            document.onkeydown=(e)=>{
+                keyDown(e);
+            }
+        }
+
+        //普难度
+        function normalStrat(){
+            setInterval(move,300);
+            document.onkeydown=(e)=>{
+                keyDown(e);
+            }
+        }
+
+        //低难度
+        function easyStrat(){
+            setInterval(move,500);
+            document.onkeydown=(e)=>{
+                keyDown(e);
+            }
+        }
+    </script>
+</body>
+</html>

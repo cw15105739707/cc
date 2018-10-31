@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>我的bootstrap网页</title>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+        <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+		
+		<style class="text/css">
+		/* 页眉样式 */
+		div.demo {
+			padding:100px;
+			/* border:2px dotted red; */
+		}
+
+		/* 导航栏样式 */
+		section {
+			/* border:2px dotted blue; */
+		}
+
+		section nav img {
+			max-width:180px;
+			background-color: white;
+		}
+
+		section nav ul {
+			position: absolute;
+			right:0px;
+		}
+
+		/* 开始卡片样式 */
+		.row {
+			margin:100px auto;
+		}
+		div.col-6 {
+			width:70%;
+			margin: 0 auto;
+		}
+
+		.navbarTwo {
+			margin:0 auto;
+		}
+
+		.navbarTwo > li {
+			padding:10px;
+		}
+
+		h2 {
+			padding: 10px;
+		}
+
+		</style>
+	</head>
+	<body>
+		<!-- 开始页眉 -->
+		<div class="container-fluid demo bg-light text-center">
+			<h1>我的第一个bootstrap4页面</h1>
+			<p>重置浏览器窗口大小查看效果！</p>
+		</div>
+		<!-- 结束页眉 -->
+
+		<!-- 开始导航栏 -->
+		<section>
+			<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+				<a class="navbar-brand" href="">
+					<img src="logo.png"/>
+				</a>
+				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#demo">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="demo">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="http://www.baidu.com">百度</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="https://www.sina.com.cn/">新浪</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="https://www.taobao.com/" id="navbardrop" data-toggle="dropdown">淘宝网</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="https://s.taobao.com/search?initiative_id=tbindexz_20170306&ie=utf8&spm=a21bo.2017.201856-taobao-item.2&sourceId=tb.index&search_type=item&ssid=s5-e&commend=all&imgfile=&q=%E8%A1%A3%E6%9C%8D&suggest=history_1&_input_charset=utf-8&wq=&suggest_query=&source=suggest">衣服</a>
+								<a class="dropdown-item" href="https://s.taobao.com/search?ie=utf8&initiative_id=staobaoz_20181029&stats_click=search_radio_all%3A1&js=1&imgfile=&q=%E8%A3%A4%E5%AD%90&suggest=0_2&_input_charset=utf-8&wq=kuzi&suggest_query=kuzi&source=suggest">裤子</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</section>
+		<!-- 结束导航栏 -->
+
+		<!-- 开始卡片 -->
+		<div class="container-fluid myCard text-center">
+			<div class="row">
+				<div class="col-2"></div>
+				<div class="col-3">
+					<div class="card" style="width:400px">
+						<div class="card-header">
+							<h1>我的资料</h1>
+						</div>
+						<div class="card-body">
+							<h3>关于我</h3>
+							<p>我的照片</p>
+						</div>
+						<img class="card-img-bottom" src="http://static.runoob.com/images/mix/img_avatar.png" alt="card image" style="width:100%">
+				    	<div class="card-footer">
+						<p>关于我的介绍..</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-2"></div>
+				<div class="col-3">
+					<div class="card" style="width:400px">
+						<div class="card-header">
+							<h1>你的资料</h1>
+						</div>
+						<div class="card-body">
+							<h3>关于你</h3>
+							<p>你的照片</p>
+						</div>
+						<img src="http://static.runoob.com/images/mix/img_avatar.png" alt="card image" style="width:100%" />
+						<div class="card-footer">
+							<p>关于你的介绍..</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-2"></div>
+			</div>
+			<div class="row">
+				<div class="col-2"></div>
+				<div class="col-3">
+					<h3>一些链接</h3>
+					<p>说明文本</p>
+					<nav class="navbar bg-white">
+						<ul class="navbar-nav nav-pills navbarTwo">
+							<li class="nav-item">
+								<a class="nav-link active">激活状态</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">链接</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">链接</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link disabled" href="">禁用</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-2"></div>
+				<div class="col-3">
+					<h2>菜鸟教程，学的不仅是技术，更是梦想！！！</h2>
+					<h2>菜鸟教程，学的不仅是技术，更是梦想！！！</h2>
+					<h2>菜鸟教程，学的不仅是技术，更是梦想！！！</h2>
+				</div>
+				<div class="col-2"></div>
+			</div>
+		</div>
+
+		<div class="container-fluid bg-dark text-white text-center" style="padding:30px">
+			<h5>底部内容</h5>
+		</div>
+	</body>
+</html>
