@@ -7,6 +7,12 @@
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <!--weiper插件-->
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <script src="../js/swiper.min.js"></script>
+
+    <!--导航栏样式-->
     <style>
         .navbar-nav {
             position:absolute;
@@ -19,14 +25,95 @@
             top:25px;
         }
     </style>
+
+    <!--swiper样式-->
+    <style>
+        html, body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            font-size: 14px;
+            /*color:blue;*/
+            margin: 0;
+            padding: 0;
+
+
+        }
+
+        .swiper-container {
+            width: 100%;
+            height:200px;
+        }
+
+        .swiper-slide{
+            /* text-align: center; */
+            font-size: 18px;
+            background-color: lightgrey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+    <!--header样式-->
+    <style>
+        header {
+            background-image: url("../images/slider2.jpg");
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            width:100%;
+            height:100%;
+            color:#2FC3BD;
+
+
+        }
+
+        header h4 {
+            padding:200px 0 50px 200px;
+            font-size: 32px;
+            letter-spacing: 10px;
+        }
+
+        header h1 {
+            padding:0 0 0 200px;
+            font-size: 64px;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+    </style>
+
+    <style>
+        .sectionTopBody {
+            max-width:60%;
+            text-align: center;
+            margin: 100px auto;
+        }
+
+        .sectionTopBody h4 {
+            border-bottom:1px solid #2FC3BD;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            color:#586973
+        }
+
+        .sectionTopBody p {
+            color:#888888;
+        }
+
+        .sectionTopBody .lastP {
+            color:#2FC3BD;
+        }
+    </style>
 </head>
 
 <body>
     <!-- 导航栏 -->
-    <nav class="navbar navbar-expand-md bg-lightgrey navbar-dark">
+    <nav class="navbar navbar-expand-md bg-secondary navbar-dark">
         <a class="navbar-brand" href="#">
-            <img src="logo.png" style="width:180px"/>
-            <img class="weixinImage" src="weixin.png" style="width:30px"/>
+            <img src="../images/logo.png" style="width:180px"/>
+            <img class="weixinImage" src="../images/weixin.png" style="width:30px"/>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -55,6 +142,76 @@
         </div>  
     </nav>
     <!-- 结束导航栏 -->
+
+    <!-- header -->
+    <header>
+        <h4>记录美好时刻</h4>
+        <h1>去旅游<br/>找驴行在线</h1>
+    </header>
+
+    <!--topBody-->
+    <section>
+        <div class="sectionTopBody">
+        <h4>打造驴行在线成为既时尚、又流行的全国旅游网站</h4>
+        <p>公司介绍：随着互联网电子商务的迅猛发展，嘉兴驴行网络科技有限公司(简称：驴行在线)积极响应政府“互联网+”和“大众创业、万众创新”的号召，整合了大量线上、线下的户外资源，严格筛选、审核每一个合作商和入驻商家，来保障会员(消费者、投资者)利益，打造一家旅游消费(投资)资本社会化互联网资源创富的共产平台。</p>
+        <p>创新性举措：驴行在线在满足日常旅行基础上，其创新性的举措，可以最大程度保证了消费者的利益及权益。驴行在线通过创新性地应用和实践《消费资本论》搭建了一个简单便利的创富、创业平台，让消费者不仅在享受低价驴行的同时，还将消费资本转化为收益资本，消费者与经营者自由转化、互惠互利，共享旅行经营之收益。</p>
+        <p>先进的商业模式：驴行在线创新性地将B2B2C和O2O模式进行融合，实现跨区域的线上线下资源整合，和线上线下的供销模式。通过线上客流数据，为供应商和消费商提供广覆盖的旅行线路供需分析，帮助供应商的旅行路线供给要素配置，以及引导消费者的线上线下的精准消费。</p>
+        <p>驴行在线前景：驴行在线凭借先进的商业模式，以移动互联网平台，运用互联网金融，将以生产端（地接，地陪，导游，）为主的产业资本，以消费端为主的货币资本，有机地融合在一起，进而通过消费促进产业发展，通过消费进行产业资源的重新配置，进而推动“旅行新资源开发”国家战略的实现。 驴行在线创新的加密数字资产——驴币，让消费者通过消费分享获取积分、共享旅行利润。同时推出，积分兑换礼品、积分换购、积分互联、积分提现等多元化服务，为消费者营建悦享生活舒适圈，带来独一无二的边游边赚钱的新享受!</p>
+        <p class="lastP">驴行在线协广大驴友共同奔赴祖国名山大川，致力将驴行在线建设成为中国新生代的户外平台</p>
+        <span>要户外，上驴行在线</span><br/>
+        <span>要旅行，上驴行在线</span><br/>
+        <span>驴行在线引领，健康新生活！</span><br/>
+        </div>
+    </section>
+
+    <!--bottomBody-->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="../images/slider1.jpg"/>
+            </div>
+            <div class="swiper-slide">
+                <img src="../images/slider2.jpg"/>
+            </div>
+            <div class="swiper-slide">
+                <img src="../images/slider3.jpg"/>
+            </div>
+            <div class="swiper-slide">
+                <img src="../images/slider1.jpg"/>
+            </div>
+            <div class="swiper-slide">
+                <img src="../images/slider2.jpg"/>
+            </div>
+            <div class="swiper-slide">
+                <img src="../images/slider3.jpg"/>
+            </div>
+        </div>
+
+        <!-- 导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+
+    <script>
+        let mySwiper=new Swiper('.swiper-container',{
+            loop:true,//循环模式选项
+            grabCursor: true,//抓手光标
+            keyboard: {enabled: true,},//键盘切换
+            // mousewheel: true,//鼠标控制
+            slidesPerView: 3,//一次显示多个slide
+            slidesPerGroup: 3,//slide分组
+            freeMode: true,//free模式，不贴在边缘
+            autoplay: {delay: 2500,disableOnInteraction: false,},//自动切换
+
+            navigation:{
+                nextEl:'.swiper-button-next',
+                prevEl:'.swiper-button-prev',
+            },
+            mousewheel: true,//内容滚动
+        })
+    </script>
+
 </body>
 
 </html>
