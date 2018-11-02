@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="utf-8">
+    <!--jquery-->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <!--bootstrap4-->
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
@@ -14,15 +17,36 @@
 
     <!--导航栏样式-->
     <style>
+        .navbar {
+            width: 100%;
+            height:100px;
+            position: fixed;
+            top:0;
+            left:0;
+            opacity: 0.2;
+        }
+
         .navbar-nav {
-            position:absolute;
-            right:100px;
+            position:fixed;
+            right:20%;
         }
 
         .navbar-brand .weixinImage {
-            position: absolute;
-            right: 50px;
-            top:25px;
+            position: fixed;
+            right: 16%;
+            top:38px;
+        }
+
+        .nav-item .nav-link {
+            color:white !important;
+        }
+
+        .nav-item .nav-link:link , .nav-item .nav-link:visited {
+            color:white;
+        }
+
+        .nav-item .nav-link:hover {
+            color:greenyellow !important;
         }
     </style>
 
@@ -34,23 +58,21 @@
         }
 
         body {
-            font-size: 14px;
+            /*font-size: 14px;*/
             /*color:blue;*/
             margin: 0;
             padding: 0;
-
-
         }
 
         .swiper-container {
             width: 100%;
-            height:200px;
+            height:20%;
         }
 
         .swiper-slide{
             /* text-align: center; */
             font-size: 18px;
-            background-color: lightgrey;
+            /*background-color: lightgrey;*/
             display: flex;
             justify-content: center;
             align-items: center;
@@ -66,18 +88,24 @@
             width:100%;
             height:100%;
             color:#2FC3BD;
-
-
+            display: none;
         }
 
         header h4 {
-            padding:200px 0 50px 200px;
+            padding:200px 0 0 0;
+            /*padding:200px 50px;*/
+            width:400px;
             font-size: 32px;
             letter-spacing: 10px;
+            margin: 0 auto;
+            text-align: center;
         }
 
         header h1 {
-            padding:0 0 0 200px;
+            padding:0 0 200px;
+            margin:0 auto;
+            width:400px;
+            text-align: center;
             font-size: 64px;
             font-weight: bold;
             line-height: 1.5;
@@ -85,6 +113,10 @@
     </style>
 
     <style>
+        section {
+            background-color:#f9f9f9;
+            padding:25px 0;
+        }
         .sectionTopBody {
             max-width:60%;
             text-align: center;
@@ -104,6 +136,107 @@
 
         .sectionTopBody .lastP {
             color:#2FC3BD;
+            font-size: 18px;
+        }
+
+        .sectionTopBody span {
+            font-size: 20px;
+            color: #188009;
+        }
+    </style>
+
+    <style>
+        .container.book {
+            text-align: center;
+            margin:50px auto;
+        }
+
+        .container.book h1 {
+            color:#2FC3BD;
+            border-bottom: 2px solid green;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        .container.book h4 {
+            color:#2FC3BD;
+        }
+
+        .container.book img {
+            width:100px;
+        }
+
+        .container.book h5 {
+            color: #28a745;
+            background-image: -webkit-linear-gradient(-45deg, rgba(121, 155, 208, 0.2) 0%, rgba(0, 161, 153, 0.2) 33.33%, rgba(129, 190, 57, 0.2) 100%);
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+
+    </style>
+
+    <!--footer样式-->
+    <style>
+        footer {
+            background-color: #404d54;
+            padding:28px;
+            text-align: center;
+            color:#fff;
+        }
+    </style>
+
+    <style>
+        .scroll {
+            opacity: 1;
+            height:80px;
+        }
+    </style>
+
+    <style>
+        aside {
+            z-index: 1;
+            text-align: center;
+            position:fixed;
+            right:0;
+            top:50%;
+            border:1px solid #888888;
+            background-color: white;
+        }
+
+        aside img {
+            width:200px;
+        }
+
+        aside h5 {
+            margin:10px;
+            color:#888888;
+        }
+
+        aside p {
+            margin:10px auto;
+        }
+
+        aside a {
+            background-color: #586973;
+            padding: 5px;
+            width:100px;
+            margin:5px auto;
+            color:white;
+        }
+
+        aside a:link ,aside a:visited ,aside a:hover ,aside a:active {
+            color:white;
+            text-decoration: none;
+        }
+
+        aside button {
+            position: fixed;
+            right:5px;
+            top:50%;
+            background-color: white;
+            border:none;
+            border-top:1px solid #888888;
+            font-size: 25px;
         }
     </style>
 </head>
@@ -174,7 +307,10 @@
                 <img src="../images/slider2.jpg"/>
             </div>
             <div class="swiper-slide">
-                <img src="../images/slider3.jpg"/>
+                <img src="../images/slider1.jpg"/>
+            </div>
+            <div class="swiper-slide">
+                <img src="../images/slider2.jpg"/>
             </div>
             <div class="swiper-slide">
                 <img src="../images/slider1.jpg"/>
@@ -182,34 +318,86 @@
             <div class="swiper-slide">
                 <img src="../images/slider2.jpg"/>
             </div>
-            <div class="swiper-slide">
-                <img src="../images/slider3.jpg"/>
+        </div>
+    </div>
+
+    <div class="container book">
+        <div class="row">
+            <div class="col-12">
+                <h1>驴行在线政策白皮书</h1>
             </div>
         </div>
-
-        <!-- 导航按钮 -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="../images/img1@2x.png"/>
+                <h4>投资端</h4>
+            </div>
+            <div class="col-md-4">
+                <img src="../images/img2@2x.png"/>
+                <h4>生产端</h4>
+            </div>
+            <div class="col-md-4">
+                <img src="../images/img3@2x.png"/>
+                <h4>消费端</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h5>优质旅游资源供应商</h5>
+                <h5>通过驴行在线，您可以</h5>
+                <h5>战略投资合伙人（战投）</h5>
+            </div>
+            <div class="col-md-4">
+                <h5>优质旅游资源供应商</h5>
+                <h5>通过驴行在线，您可以</h5>
+                <h5>战略投资合伙人（战投）</h5>
+            </div>
+            <div class="col-md-4">
+                <h5>优质旅游资源供应商</h5>
+                <h5>通过驴行在线，您可以</h5>
+                <h5>战略投资合伙人（战投）</h5>
+            </div>
+        </div>
     </div>
+
+    <aside style="visibility: visible">
+        <button style="cursor:pointer">&#215</button>
+        <h5>咨询我们</h5>
+        <img src="../images/contactus.jpg"/>
+        <p><a href="">前往咨询</a></p>
+    </aside>
+
+    <footer>
+        <p>www.lxzaixian.com © 2018 All Rights Reserved</p>
+        <p>0573-89106131</p>
+    </footer>
 
 
     <script>
         let mySwiper=new Swiper('.swiper-container',{
             loop:true,//循环模式选项
-            grabCursor: true,//抓手光标
-            keyboard: {enabled: true,},//键盘切换
-            // mousewheel: true,//鼠标控制
             slidesPerView: 3,//一次显示多个slide
             slidesPerGroup: 3,//slide分组
-            freeMode: true,//free模式，不贴在边缘
             autoplay: {delay: 2500,disableOnInteraction: false,},//自动切换
-
-            navigation:{
-                nextEl:'.swiper-button-next',
-                prevEl:'.swiper-button-prev',
-            },
-            mousewheel: true,//内容滚动
         })
+
+        $(document).ready(function(){
+            $("header").fadeIn(1000);
+
+            $("aside button").click(function(){
+                $("aside").css("visibility","hidden")
+            })
+
+            $(window).scroll(function(){
+                if($(window).scrollTop() > 200){
+                    $(".navbar").addClass("scroll")
+                }else {
+                    $(".navbar").removeClass("scroll")
+                };
+            });
+        });
+
+
     </script>
 
 </body>
