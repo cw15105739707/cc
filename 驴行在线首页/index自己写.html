@@ -15,8 +15,37 @@
     <link rel="stylesheet" href="../css/swiper.min.css">
     <script src="../js/swiper.min.js"></script>
 
-    <!--导航栏样式-->
     <style>
+        /*内置页面样式*/
+        .index {
+            position: fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            z-index:9999;
+            opacity: 1;
+            visibility: visible;
+            /*transition: all 0.5s;*/
+            background-color: white;
+        }
+
+        .load_hide {
+            opacity: 0;
+            visibility: hidden;
+            /*transition: all 0.5s;*/
+            width:300px;
+        }
+
+        .indexImage {
+            width:30%;
+            position:absolute;
+            top:30%;
+            left:30%;
+        }
+        /*结束内置页面样式*/
+
+        /*开始导航栏样式*/
         .navbar {
             width: 100%;
             height:100px;
@@ -24,6 +53,7 @@
             top:0;
             left:0;
             opacity: 0.2;
+            transition: all 1s;
         }
 
         .navbar-nav {
@@ -34,7 +64,7 @@
         .navbar-brand .weixinImage {
             position: fixed;
             right: 16%;
-            top:38px;
+            padding-top:15px;
         }
 
         .nav-item .nav-link {
@@ -48,18 +78,15 @@
         .nav-item .nav-link:hover {
             color:greenyellow !important;
         }
-    </style>
+        /*结束导航栏样式*/
 
-    <!--swiper样式-->
-    <style>
+        /* swiper样式 */
         html, body {
             position: relative;
             height: 100%;
         }
 
         body {
-            /*font-size: 14px;*/
-            /*color:blue;*/
             margin: 0;
             padding: 0;
         }
@@ -70,17 +97,14 @@
         }
 
         .swiper-slide{
-            /* text-align: center; */
             font-size: 18px;
-            /*background-color: lightgrey;*/
             display: flex;
             justify-content: center;
             align-items: center;
         }
-    </style>
+        /*结束swiper样式*/
 
-    <!--header样式-->
-    <style>
+        /* header样式 */
         header {
             background-image: url("../images/slider2.jpg");
             background-repeat: no-repeat;
@@ -93,12 +117,12 @@
 
         header h4 {
             padding:200px 0 0 0;
-            /*padding:200px 50px;*/
             width:400px;
             font-size: 32px;
             letter-spacing: 10px;
             margin: 0 auto;
             text-align: center;
+            display: none;
         }
 
         header h1 {
@@ -109,10 +133,11 @@
             font-size: 64px;
             font-weight: bold;
             line-height: 1.5;
+            display: none;
         }
-    </style>
+        /*header样式*/
 
-    <style>
+        /*开始section样式*/
         section {
             background-color:#f9f9f9;
             padding:25px 0;
@@ -143,9 +168,8 @@
             font-size: 20px;
             color: #188009;
         }
-    </style>
 
-    <style>
+
         .container.book {
             text-align: center;
             margin:50px auto;
@@ -172,29 +196,27 @@
             padding: 10px 0;
             margin-bottom: 20px;
         }
-
-    </style>
-
-    <!--footer样式-->
-    <style>
+        /*结束div样式*/
+        
+        /* footer样式 */
         footer {
             background-color: #404d54;
             padding:28px;
             text-align: center;
             color:#fff;
         }
-    </style>
+        /*结束footer样式*/
 
-    <style>
+        /*开始滑动样式*/
         .scroll {
             opacity: 1;
             height:80px;
         }
-    </style>
+        /*结束滑动样式*/
 
-    <style>
+        /*开始aside样式*/
         aside {
-            z-index: 1;
+            z-index: 2;
             text-align: center;
             position:fixed;
             right:0;
@@ -238,14 +260,21 @@
             border-top:1px solid #888888;
             font-size: 25px;
         }
+        /*结束aside样式*/
     </style>
 </head>
 
 <body>
-    <!-- 导航栏 -->
+    <!--开始内置内面-->
+    <div class="index load_hide">
+        <div class="loading">
+            <img class="indexImage" src="../images/logo.png"/>
+        </div>
+    </div>
+    <!-- 开始导航栏 -->
     <nav class="navbar navbar-expand-md bg-secondary navbar-dark">
         <a class="navbar-brand" href="#">
-            <img src="../images/logo.png" style="width:180px"/>
+            <img class="logo" src="../images/logo.png" style="width:180px"/>
             <img class="weixinImage" src="../images/weixin.png" style="width:30px"/>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -281,8 +310,9 @@
         <h4>记录美好时刻</h4>
         <h1>去旅游<br/>找驴行在线</h1>
     </header>
+    <!--结束header-->
 
-    <!--topBody-->
+    <!--section-->
     <section>
         <div class="sectionTopBody">
         <h4>打造驴行在线成为既时尚、又流行的全国旅游网站</h4>
@@ -296,8 +326,9 @@
         <span>驴行在线引领，健康新生活！</span><br/>
         </div>
     </section>
+    <!--结束section-->
 
-    <!--bottomBody-->
+    <!--开始swiper-->
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -320,7 +351,9 @@
             </div>
         </div>
     </div>
+    <!--结束swiper-->
 
+    <!--开始div-->
     <div class="container book">
         <div class="row">
             <div class="col-12">
@@ -359,35 +392,43 @@
             </div>
         </div>
     </div>
+    <!--结束div-->
 
+    <!--开始aside-->
     <aside style="visibility: visible">
         <button style="cursor:pointer">&#215</button>
         <h5>咨询我们</h5>
         <img src="../images/contactus.jpg"/>
         <p><a href="">前往咨询</a></p>
     </aside>
+    <!--结束aside-->
 
+    <!--开始footer-->
     <footer>
         <p>www.lxzaixian.com © 2018 All Rights Reserved</p>
         <p>0573-89106131</p>
     </footer>
-
+    <!--结束footer-->
 
     <script>
-        let mySwiper=new Swiper('.swiper-container',{
-            loop:true,//循环模式选项
-            slidesPerView: 3,//一次显示多个slide
-            slidesPerGroup: 3,//slide分组
-            autoplay: {delay: 2500,disableOnInteraction: false,},//自动切换
-        })
-
+        //header延时加载
         $(document).ready(function(){
-            $("header").fadeIn(1000);
+            //显示内置页面
+            $(".index").removeClass("load_hide");
+            setTimeout(()=>{
+                $(".index").addClass("load_hide");
+            },200);
 
-            $("aside button").click(function(){
-                $("aside").css("visibility","hidden")
-            })
+            $("header").fadeIn(6000);
+            $("header h4").slideDown(6000);
+            $("header h1").slideDown(8000)
 
+            //点击控制侧栏显示与隐藏
+            $("aside button").click(()=>{
+                $("aside").fadeOut(1000)
+            });
+
+            //滑动增减scroll样式
             $(window).scroll(function(){
                 if($(window).scrollTop() > 200){
                     $(".navbar").addClass("scroll")
@@ -395,11 +436,15 @@
                     $(".navbar").removeClass("scroll")
                 };
             });
+
+            //swiper
+            let mySwiper=new Swiper('.swiper-container',{
+                loop:true,//循环模式选项
+                slidesPerView: 3,//一次显示多个slide
+                slidesPerGroup: 3,//slide分组
+                autoplay: {delay: 2500,disableOnInteraction: false,},//自动切换
+            })
         });
-
-
     </script>
-
 </body>
-
 </html>
