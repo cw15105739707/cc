@@ -23,17 +23,15 @@
             left:0;
             width:100%;
             height:100%;
-            z-index:9999;
+            z-index:4;
             opacity: 1;
             visibility: visible;
-            /*transition: all 0.5s;*/
             background-color: white;
         }
 
         .load_hide {
             opacity: 0;
             visibility: hidden;
-            /*transition: all 0.5s;*/
             width:300px;
         }
 
@@ -47,6 +45,7 @@
 
         /*开始导航栏样式*/
         .navbar {
+            z-index: 3;
             width: 100%;
             height:100px;
             position: fixed;
@@ -142,6 +141,7 @@
             background-color:#f9f9f9;
             padding:25px 0;
         }
+
         .sectionTopBody {
             max-width:60%;
             text-align: center;
@@ -261,6 +261,89 @@
             font-size: 25px;
         }
         /*结束aside样式*/
+
+        /*开始弹出框样式*/
+        .pop_model {
+            position: fixed;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            z-index:4;
+            display: none;
+        }
+
+        .pop_box {
+            z-index: 6;
+            width:50%;
+            height: 50%;
+            background-color: white;
+            position: fixed;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .pop_foot {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top:0;
+            left: 0;
+            background-color: #888888;
+            z-index: 5;
+            opacity: 0.6;
+        }
+
+        .pop_btn button {
+            position: absolute;
+            right:10px;
+            top:0;
+            background-color: white;
+            border:none;
+            font-size: 30px;
+        }
+
+        .pop_box .pop_title {
+            margin:40px auto 10px auto;
+            text-align: center;
+        }
+
+        .pop_box .pop_p {
+            width: 50%;
+            float: left;
+            text-align: center;
+        }
+
+        .pop_box .pop_ul {
+            width: 50%;
+            float: left;
+        }
+
+        .pop_a {
+            width:50%;
+            height: 50%;
+            position: fixed;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            z-index: 6;
+            background-color: transparent;
+        }
+
+        .pop_a a {
+            text-decoration: none;
+            background-color: #2FC3BD;
+            color:white;
+            font-size: 18px;
+            font-weight: bold;
+            padding:10px;
+            border-radius: 15px;
+        }
+        /*结束弹出框样式*/
     </style>
 </head>
 
@@ -376,23 +459,46 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <h5>优质旅游资源供应商</h5>
-                <h5>通过驴行在线，您可以</h5>
-                <h5>战略投资合伙人（战投）</h5>
+                <h5 data-index="0">优质旅游资源供应商</h5>
+                <h5 data-index="1">通过驴行在线，您可以</h5>
+                <h5 data-index="2">战略投资合伙人（战投）</h5>
             </div>
             <div class="col-md-4">
-                <h5>优质旅游资源供应商</h5>
-                <h5>通过驴行在线，您可以</h5>
-                <h5>战略投资合伙人（战投）</h5>
+                <h5 data-index="3">优质旅游资源供应商</h5>
+                <h5 data-index="4">通过驴行在线，您可以</h5>
+                <h5 data-index="5">战略投资合伙人（战投）</h5>
             </div>
             <div class="col-md-4">
-                <h5>优质旅游资源供应商</h5>
-                <h5>通过驴行在线，您可以</h5>
-                <h5>战略投资合伙人（战投）</h5>
+                <h5 data-index="6">优质旅游资源供应商</h5>
+                <h5 data-index="7">通过驴行在线，您可以</h5>
+                <h5 data-index="8">战略投资合伙人（战投）</h5>
             </div>
         </div>
     </div>
     <!--结束div-->
+
+    <!--开始弹出框-->
+    <div class="pop_model">
+
+        <div class="pop_box">
+
+            <div class="pop_title"><h3></h3></div>
+            <div class="pop_body">
+                <div class="pop_p">
+                    <p></p>
+                </div>
+                <div class="pop_ul">
+                    <ul></ul>
+                </div>
+            </div>
+        </div>
+        <div class="pop_a">
+            <div class="pop_btn"><button style="cursor:pointer">&#215</button></div>
+            <a href="#" class="prev">上一条</a>
+            <a href="#" class="next">下一条</a>
+        </div>
+        <div class="pop_foot"></div>
+    </div>
 
     <!--开始aside-->
     <aside style="visibility: visible">
@@ -417,11 +523,143 @@
             $(".index").removeClass("load_hide");
             setTimeout(()=>{
                 $(".index").addClass("load_hide");
-            },200);
+            },2000);
 
+            //延时加载header
             $("header").fadeIn(6000);
             $("header h4").slideDown(6000);
-            $("header h1").slideDown(8000)
+            $("header h1").slideDown(8000);
+
+            //控制弹窗
+            let page=[{
+                index:0,
+                title:'公司的发生',
+                res:'梵蒂冈',
+                list:[
+                    '热污染',
+                    '海棠依旧'
+                ]
+            },
+                {
+                    index:1,
+                    title:'热武器',
+                    res:'就要看',
+                    list:[
+                        '23(づ￣3￣)づ╭❤～人',
+                        '讲话稿'
+                    ]
+                },
+                {
+                    index:2,
+                    title:'埃尔文',
+                    res:'，离开家',
+                    list:[
+                        '发第三次',
+                        '特让他个人'
+                    ]
+                },
+                {
+                    index:3,
+                    title:'成都师范',
+                    res:'投入体验',
+                    list:[
+                        '结果符合',
+                        '第三方士大夫'
+                    ]
+                },
+                {
+                    index:4,
+                    title:'看见好看就好',
+                    res:'广告费和',
+                    list:[
+                        '而非',
+                        '第三方大叔'
+                    ]
+                },
+                {
+                    index:5,
+                    title:'的想法八十多',
+                    res:'局医院',
+                    list:[
+                        '佛挡杀佛',
+                        '个人会员'
+                    ]
+                },
+                {
+                    index:6,
+                    title:'；藕孔经理叫',
+                    res:'库建行卡i',
+                    list:[
+                        '咯高回落',
+                        '→他人个人'
+                    ]
+                },
+                {
+                    index:7,
+                    title:'劜',
+                    res:'jkl',
+                    list:[
+                        '法师打死了',
+                        '唯一'
+                    ]
+                },
+                {
+                    index:8,
+                    title:'啊数据库里H小姐爱上了',
+                    res:'内存大数据开始卡了',
+                    list:[
+                        '好吃的房间卡萨好看',
+                        'class阿萨德开发大会上'
+                    ]
+                },
+            ]
+            let now_index;
+            let list_length;
+            $(".col-md-4 h5").click(function(){
+                $(".pop_model").fadeIn(1000)
+                now_index=$(this).attr('data-index');
+                console.log(now_index);
+                change(now_index);
+            })
+
+            $('.pop_a a').click(function (e) {
+                e.preventDefault();
+                if($(this).hasClass('next')){
+                    now_index++;
+                    console.log(now_index)
+                    change(now_index);
+                }else {
+                    now_index--;
+                    console.log(now_index)
+                    change(now_index)
+                }
+            })
+
+            function change(now_index){
+                $(".pop_ul ul").html('');
+                $('.pop_title h3').html('(' + (Number(now_index)+1) + ')' + page[now_index].title);
+                $('.pop_p p').html(page[now_index].res);
+                list_length=page[now_index].list.length;
+                for(let i=0;i<list_length;i++){
+                    $('.pop_ul ul').append('<li>' + page[now_index].list[i] + '</li>');
+                }
+                if(now_index<=0){
+                    $('.pop_a a.prev').hide();
+                }else if(now_index>=8){
+                    $('.pop_a a.next').hide();
+                }else {
+                    $('.pop_a a').show();
+                }
+            }
+
+            $(".pop_btn").click(()=>{
+                $(".pop_model").fadeOut(1000)
+            })
+
+            $('.pop_foot').click(function () {
+                $('.pop_model').fadeOut(1000);
+            })
+
 
             //点击控制侧栏显示与隐藏
             $("aside button").click(()=>{
@@ -434,7 +672,7 @@
                     $(".navbar").addClass("scroll")
                 }else {
                     $(".navbar").removeClass("scroll")
-                };
+                }
             });
 
             //swiper
