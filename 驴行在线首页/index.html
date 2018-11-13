@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <link rel="stylesheet" href="../css/swiper.min.css">
+
+    <style>
+        /*nav*/
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navbar-brand {
+            position: fixed;
+            left: 10%;
+        }
+        .navbar-nav {
+            position: fixed;
+            right: 10%;
+        }
+
+        /*swiper*/
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-wrapper{
+            width: 100%;
+            height: 100%;
+        }
+
+        /*button*/
+        div.button{
+            border-bottom: 1px solid #c5c5c5;
+        }
+        .btn {
+            border:1px solid #c5c5c5;
+            width: 150px;
+            border-radius: 25px;
+            color: #646464;
+            transition: all 0.2s;
+            position: relative;
+            margin: 20px;
+        }
+        .btn:hover {
+            background-color: #28a745 !important;
+            color: white;
+            transform: translate(0,-10px);
+        }
+
+        /*article*/
+        article {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+        }
+        .line {
+            width: 50px;
+            height: 5px;
+            border-bottom: 1px solid #646464;
+            margin: 50px;
+        }
+        .container-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .page-head {
+            letter-spacing: 5px;
+        }
+        .page-span {
+            margin: 25px;
+            letter-spacing: 5px;
+        }
+        .container-foot {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .article-foot {
+            width: 900px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .page-foot {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .page-footLeft {
+            width: 100px;
+        }
+        .page-footRight {
+            width: 200px;
+        }
+
+        /*section*/
+        section div.row .col-6 {
+            text-align: left;
+        }
+        section div.row .col-6.img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        section p {
+            padding: 20px 0;
+            margin-bottom: 0;
+        }
+        section button {
+            color: #3db1fa;
+            width: 198px;
+            height: 43px;
+            line-height: 43px;
+            text-align: center;
+            font-size: 16px;
+            border: 1px solid #c4e7fd;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+        section button:hover {
+            background-color: #2FC3BD;
+            color: white;
+            transform: translate(-10px,0px);
+        }
+        /*footer*/
+        footer {
+            width: 100%;
+            height: 80px;background-color: #4b545c;
+            color: white;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<!--nav-->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" href="">
+        <img src="../images/logo.png" style="width: 180px">
+    </a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#collapser">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapser">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link" href="">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">公司简介</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">产品介绍</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">新闻动态</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">机构入驻</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">联系我们</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <img src="../images/weixin.png" style="width: 25px"/>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!--end nav-->
+<!--swiper-->
+<div class="swiper-container">
+    <div class="parallax-bg" style="background-image:url(../images/slider2.jpg)" data-swiper-parallax="-23%"></div>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="../images/slider1.jpg">
+        </div>
+        <div class="swiper-slide">
+            <img src="../images/slider2.jpg">
+        </div>
+        <div class="swiper-slide">
+            <img src="../images/slider3.jpg">
+        </div>
+    </div>
+    <!--导航按钮-->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <!--分页符-->
+    <div class="swiper-pagination"></div>
+    <!--进度条-->
+    <div class="swiper-scrollbar"></div>
+</div>
+<!--end swiper-->
+<!--button-->
+<div class="container-fluid button">
+    <div class="row">
+        <div class="col-2 offset-3">
+            <button class="btn bg-white">iPhone下载</button>
+        </div>
+        <div class="col-2">
+            <button class="btn bg-white">Android下载</button>
+        </div>
+        <div class="col-2">
+            <button class="btn bg-white">PC下载</button>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
+<!--end button-->
+
+<article>
+    <div class="line"></div>
+    <h1 class="page-head">记录美好生活</h1>
+    <p class="page-span">去旅游找驴行在线</p>
+    <div class="container container-page">
+        <div class="row">
+            <div class="col">
+                <img src="../images/banner_bg.jpg" style="width: 900px">
+            </div>
+        </div>
+    </div>
+    <div class="container container-foot">
+        <div class="row article-foot">
+            <div class="col-6 page-foot">
+                <div class="page-footLeft"><img src="../images/img1@2x.png" style="width: 100px;height:100px"/></div>
+                <div class="page-footRight"><p>打造驴行在线成为既时尚、又流行的全国旅游网站</p></div>
+            </div>
+            <div class="col-6 page-foot">
+                <div class="page-footLeft"><img src="../images/img2@2x.png" style="width: 100px;height:100px"/></div>
+                <div class="page-footRight"><p>打造驴行在线成为既时尚、又流行的全国旅游网站</p></div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<section class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="line"></div>
+            <h1>时尚 && 流行</h1>
+            <P>公司介绍：随着互联网电子商务的迅猛发展，嘉兴驴行网络科技有限公司(简称：驴行在线)积极响应政府“互联网+”和“大众创业、万众创新”的号召，整合了大量线上、线下的户外资源，严格筛选、审核每一个合作商和入驻商家，来保障会员(消费者、投资者)利益，打造一家旅游消费(投资)资本社会化互联网资源创富的共产平台。</P>
+            <button class="btn bg-white">了解更多</button>
+        </div>
+        <div class="col-6 img">
+            <img src="../images/c4.jpg"/>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div>www.lxzaixian.com &copy;  2018 All Rights Reserved</div>
+    <div>0573-89106131</div>
+</footer>
+
+<script>
+    // swiper
+    let mySwiper=new Swiper('.swiper-container',{
+        loop:true,
+        grabCursor:true,
+        keyboard:{enabled:true,},
+        autoplay:{delay:2500},
+        pagination: {
+            el:'.swiper-pagination',
+            dynamicBullets: true,
+        },
+        navigation:{
+            nextEl:'.swiper-button-next',
+            prevEl:'.swiper-button-prev',
+        },
+    })
+    //end swiper
+</script>
+</body>
+</html>

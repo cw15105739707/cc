@@ -1,0 +1,34 @@
+<application>
+  <component name="UsageTrigger">
+    <counts>
+      <entry feature="StripeButton[Android Profiler].hidden" count="11" />
+      <entry feature="StripeButton[Android Profiler].shown" count="8" />
+      <entry feature="diff.DirDiffTableModel" count="1" />
+      <entry feature="diff.DirDiffViewer" count="1" />
+      <entry feature="execute.AndroidRunConfigurationType.Debug" count="8" />
+      <entry feature="execute.AndroidRunConfigurationType.Run" count="43" />
+      <entry feature="execute.Application.Debug" count="2" />
+      <entry feature="execute.Application.Run" count="3" />
+      <entry feature="ide.settings.Android SDK" count="7" />
+      <entry feature="ide.settings.Appearance" count="2" />
+      <entry feature="ide.settings.Auto Import" count="1" />
+      <entry feature="ide.settings.Code Completion" count="1" />
+      <entry feature="ide.settings.File Encodings" count="1" />
+      <entry feature="ide.settings.File and Code Templates" count="1" />
+      <entry feature="ide.settings.Font" count="1" />
+      <entry feature="ide.settings.General" count="1" />
+      <entry feature="ide.settings.Gradle" count="1" />
+      <entry feature="ide.settings.Keymap" count="1" />
+      <entry feature="ide.settings.Project Structure" count="5" />
+      <entry feature="ide.settings.Tasks" count="1" />
+      <entry feature="ideaapp.started" count="7" />
+      <entry feature="project.view.pane.AndroidView" count="10" />
+      <entry feature="project.view.pane.PackagesPane" count="1" />
+      <entry feature="project.view.pane.ProjectPane" count="10" />
+      <entry feature="terminal.win" count="5" />
+      <entry feature="welcome.screen.WelcomeScreen.Configure" count="1" />
+      <entry feature="welcome.screen.WelcomeScreen.OpenProject" count="1" />
+      <entry feature="welcome.screen.WelcomeScreen.RunAndroidSdkManager" count="1" />
+    </counts>
+  </component>
+</application>

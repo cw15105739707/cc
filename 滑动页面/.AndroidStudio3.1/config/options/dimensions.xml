@@ -1,0 +1,36 @@
+<application>
+  <component name="DimensionService">
+    <location key="#HTTP_Proxy.0.0.1920.1080" x="736" y="269" />
+    <location key="WELCOME_SCREEN.0.0.1920.1080" x="962" y="438" />
+    <location key="IdeErrosDialog.0.0.1920.1080" x="590" y="356" />
+    <location key="SettingsEditor.0.0.1920.1080" x="839" y="82" />
+    <location key="FileChooserDialogImpl.0.0.1920.1080" x="743" y="187" />
+    <location key="com.intellij.ide.util.TipDialog.0.0.1920.1080" x="616" y="336" />
+    <location key="#Project_Structure.0.0.1920.1080" x="542" y="164" />
+    <location key="deploy.picker.dialog.0.0.1920.1080" x="640" y="268" />
+    <location key="SettingsEditor.0.0.1920.1080@144dpi" x="218" y="73" />
+    <location key="deploy.picker.dialog.0.0.1920.1080@144dpi" x="613" y="261" />
+    <location key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog.0.0.1920.1080@144dpi" x="565" y="161" />
+    <location key="FileChooserDialogImpl.0.0.1920.1080@144dpi" x="488" y="153" />
+    <location key="#Project_Structure.0.0.1920.1080@144dpi" x="337" y="1" />
+    <location key="com.intellij.ide.util.TipDialog.0.0.1920.1080@144dpi" x="451" y="262" />
+    <location key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.0.0.1920.1080@144dpi" x="565" y="152" />
+    <location key="refactoring.ChangeSignatureDialog.0.0.1920.1080@144dpi" x="582" y="24" />
+    <location key="AndroidCreateResourceFileDialog.0.0.1920.1080@144dpi" x="540" y="261" />
+    <size key="GridCell.Tab.0.left.0.0.1920.1080" width="0" height="0" />
+    <size key="GridCell.Tab.0.center.0.0.1920.1080" width="0" height="0" />
+    <size key="GridCell.Tab.0.right.0.0.1920.1080" width="0" height="0" />
+    <size key="GridCell.Tab.0.bottom.0.0.1920.1080" width="0" height="0" />
+    <size key="SettingsEditor.0.0.1920.1080" width="1041" height="810" />
+    <size key="javadoc.popup.0.0.1920.1080@144dpi" width="670" height="253" />
+    <size key="GridCell.Tab.0.left.0.0.1920.1080@144dpi" width="0" height="0" />
+    <size key="GridCell.Tab.0.center.0.0.1920.1080@144dpi" width="0" height="0" />
+    <size key="GridCell.Tab.0.right.0.0.1920.1080@144dpi" width="0" height="0" />
+    <size key="GridCell.Tab.0.bottom.0.0.1920.1080@144dpi" width="0" height="0" />
+    <size key="SettingsEditor.0.0.1920.1080@144dpi" width="1434" height="952" />
+    <size key="GridCell.Tab.1.left.0.0.1920.1080@144dpi" width="1858" height="111" />
+    <size key="GridCell.Tab.1.center.0.0.1920.1080@144dpi" width="1858" height="111" />
+    <size key="GridCell.Tab.1.right.0.0.1920.1080@144dpi" width="1858" height="111" />
+    <size key="GridCell.Tab.1.bottom.0.0.1920.1080@144dpi" width="1858" height="111" />
+  </component>
+</application>
