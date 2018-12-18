@@ -1,0 +1,16 @@
+.operation-tips{
+  padding: 10px 18px;
+  margin-bottom: 12px;
+  background-color: #fff;
+  .el-collapse{
+    border-top: 0;
+  }
+  .el-collapse, .el-collapse-item__header, .el-collapse-item__wrap{
+    border-bottom: 0;
+  }
+}
+.block{
+  background-color: #fff;
+  padding: 2px 20px 20px;
+  margin-bottom: 20px;
+}
