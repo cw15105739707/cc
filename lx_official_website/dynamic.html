@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>新闻动态</title>
+<link rel="stylesheet" href="css/dynamic.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/swiper.min.css">
+<script src="js/swiper.min.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<style>
+    footer {
+        width: 100%;
+        height: 80px;
+        background-color: #4b545c;
+        color: white;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+</head>
+<body onload="f()" onresize="f()">
+<nav class="navbar navbar-expand-lg bg-white navbar-light">
+    <a class="navbar-brand col-2" href="index.html">
+        <img src="images/logo.png" style="width: 180px"/>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav col-12">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="product.html">产品介绍</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="company.html">公司简介</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="dynamic.html">新闻动态</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="supplierJoin.html">机构入驻</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">联系我们</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<header>
+    <div class="row">
+        <div class="col">
+            <h1>新闻资讯</h1>
+            <p>提供最新新闻动态<br/>
+                抓住新动能新业态 推动文旅融合深化</p>
+        </div>
+        <div class="col">
+            <img src="images/wechat_pic.png"/>
+        </div>
+    </div>
+</header>
+
+<div class='container'>
+    <div class="swiper-title">
+        <h1>新闻动态</h1>
+        <p>抓住新动能新业态 推动文旅融合深化</p>
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper"></div>
+    </div>
+</div>
+<hr/>
+<div class="container-fluid">
+    <h2>我们的旅游</h2>
+    <span class="num1"></span>
+    <span class="num2"></span>
+    <span class="num3"></span>
+</div>
+<div class="container bottom">
+    <img src="images/Hero.png"/>
+</div>
+<footer>
+    <div>www.lxzaixian.cn &copy;  2018 All Rights Reserved</div>
+    <div>0573-89106131</div>
+</footer>
+<script src="js/jquery.js"></script>
+<script>
+$(function () {
+    $(window).scroll(function () {
+        let top=$(window).scrollTop();
+        if (top>200){
+            $('div.container-fluid').fadeTo(1500,1)
+        }
+        if(top > 350){
+            $('div.bottom img').fadeIn(1500)
+        }
+    });
+    $.ajax({
+        url:'mock/navbar.json',
+        dataType:'json',
+        type:'get',
+        success:function (res) {
+            let item='';
+            for(let i=0;i<res.news.length;i++){
+                item+=`<div class="swiper-slide">
+                     <a href=""><img src="${res.news[i].src}"/></a>
+                     <p>${res.news[i].date}</p>
+                     <h4>${res.news[i].body}</h4>
+                   </div>`
+            }
+            $('.swiper-wrapper').html(item);
+            let swiper=new Swiper('.swiper-container',{
+                loop:true,
+                slidesPerView:3,
+                grabCursor:true,
+                autoplay:{delay:2000},
+                spaceBetween: 20,
+            });
+        }
+    });
+});
+
+function f() {
+    let width=$(window).width();
+    console.log(width);
+    if(width<1000){
+        $('nav .navbar-nav>li').css({'padding':'0 25px','line-height':'3em','font-size':'35px'})
+    }else{
+        $('nav .navbar-nav>li').css({'padding':'0 25px','line-height':'2em'})
+    }
+}
+</script>
+</body>
+</html>

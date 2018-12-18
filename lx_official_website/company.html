@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>公司简介</title>
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<link rel="stylesheet" href="css/company.css">
+</head>
+<body onload="f()" onresize="f()">
+<nav class="navbar navbar-expand-lg bg-white navbar-light">
+    <a class="navbar-brand col-2" href="index.html">
+        <img src="images/logo.png" style="width: 180px"/>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav col-12">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="product.html">产品介绍</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="company.html">公司简介</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="dynamic.html">新闻动态</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="supplierJoin.html">机构入驻</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">联系我们</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<header>
+    <div class="row">
+        <div class="col">
+            <h1>中国驴行</h1>
+            <p>提供行业知识，发布行业动态<br/>
+                提供完善行业资讯及相关知识库，让服务更直观</p>
+        </div>
+        <div class="col">
+            <img src="images/news_pic.png"/>
+        </div>
+    </div>
+</header>
+
+<section>
+<div class="container">
+    <div>
+        <h1>驴行网络科技有限公司</h1>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>驴行网络是一群充满活力和责任感的团队，敢于创新，不断超越自我</p>
+            <h3>坚持创新</h3>
+        </div>
+        <div class="col">
+            <p>重视客户体验，敏锐把握应用趋势，及时响应客户需求</p>
+            <h3>客户至上</h3>
+        </div>
+        <div class="col">
+            <p>有态度的去做事情，让做的事情更有价值！</p>
+            <h3>追求价值</h3>
+        </div>
+        <div class="col">
+            <p>大道至简，我们专注把简单的事情做好，把每一个普通改变</p>
+            <h3>简单专注</h3>
+        </div>
+    </div>
+</div>
+</section>
+
+<div class="container-fluid">
+    <h1 class="title">魅力驴行</h1>
+</div>
+<div class="container">
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="images/slider1.jpg">
+            <p></p>
+        </div>
+        <div class="swiper-slide">
+            <img src="images/slider2.jpg">
+        </div>
+        <div class="swiper-slide">
+            <img src="images/slider3.jpg">
+        </div>
+    </div>
+</div>
+</div>
+<div class="more">
+    <span><a href="">了解更多</a></span>
+</div>
+
+<footer>
+    <div>www.lxzaixian.cn &copy;  2018 All Rights Reserved</div>
+    <div>0573-89106131</div>
+</footer>
+<script>
+    let swiper=new Swiper('.swiper-container',{
+        loop:true,
+        // slidesPerView:3,
+        spaceBetween:30,
+        grabCursor:true,
+        autoplay:{delay:3500},
+        effect:'fade',
+    })
+
+    function f() {
+        let width=$(window).width();
+        console.log(width);
+        if(width<1000){
+            $('nav .navbar-nav>li').css({'padding':'0 25px','line-height':'3em','font-size':'35px'})
+        }else{
+            $('nav .navbar-nav>li').css({'padding':'0 25px','line-height':'2em'})
+        }
+    }
+</script>
+</body>
+</html>

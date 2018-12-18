@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="js/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/bootstrap.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<link rel="stylesheet" href="css/swiper.min.css">
+    <style>
+        /*nav*/
+        .navbar {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            opacity: 0.5;
+            background: linear-gradient(0deg, #282b30, #505055);
+            padding:28px 0;
+            font-size:16px;
+        }
+        nav .navbar-brand{
+            text-align: center;
+        }
+        .navbar-nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navbar-nav .nav-item {
+            padding:0 25px;
+            line-height: 2em;
+        }
+        .navbar-nav .nav-link {
+            color: #8b8b8b !important;
+            padding: 0 !important;
+            font-size: 16px;
+            white-space:nowrap;
+        }
+        .navbar-nav .nav-link:link , .navbar-nav .nav-link:visited {
+            color: white !important;
+        }
+        .navbar-nav .nav-link:hover , .navbar-nav .nav-link:active {
+            color: #2FC3BD!important;
+        }
+        .navbar-nav .nav-link.active{
+            color: #2FC3BD !important;
+        }
+        /*header*/
+        header {
+            width: 100%;
+            height:auto;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            background-image: url("images/10.pic_hd.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        header .container-fluid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header .form{
+            width: 30%;
+        }
+        header .btn{
+             margin: 0;
+             font-size: large;
+             padding: 5px;
+            margin:10px;
+        }
+        header div.center{
+            border-radius: 10px;
+            background-color: rgba(10,10,10,0.2);
+            box-shadow: 10px 10px 10px rgba(50,50,50,0.2);
+            padding: 25px;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+        header h2{
+            line-height: 2;
+            color: white;
+            letter-spacing: 5px;
+        }
+        header p {
+            text-indent:35px;
+            color: white;
+            line-height: 2;
+            font-size: 16px;
+            z-index: 2;
+            font-weight: 800;
+        }
+        /*swiper*/
+        .swiper-container {
+            width: 100%;
+            height: 350px;
+        }
+        .swiper-wrapper{
+            width: 100%;
+            height: 450px;
+        }
+        .swiper-slide img {
+            width: 800px;
+        }
+        /*button*/
+        div.button{
+            border-bottom: 1px solid #c5c5c5;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn {
+            border:1px solid #28a745;
+            width: 100%;
+            border-radius: 25px;
+            color: white;
+            background-color: #28a745;
+            transition: all 0.2s;
+            position: relative;
+            margin: 30px;
+            font-size: large;
+            padding: 10px;
+        }
+        .btn:hover {
+            border:1px solid deepskyblue;
+            background-color: deepskyblue !important;
+            color: #3b425c;
+            letter-spacing: 2px;
+            transform: translate(0,-5px);
+        }
+        /*article*/
+        article {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+        }
+        .line {
+            width: 50px;
+            height: 5px;
+            border-bottom: 1px solid #646464;
+            margin: 50px;
+        }
+        .container-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .page-head {
+            letter-spacing: 5px;
+        }
+        .page-span {
+            margin: 25px;
+            letter-spacing: 5px;
+        }
+        .container-foot {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .article-foot {
+            width: 900px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .page-foot {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .page-foot p {
+            padding: 20px;
+        }
+        .page-footLeft {
+            width: 100px;
+        }
+        .page-footRight {
+            width: 300px;
+        }
+        /*section*/
+        section {
+            margin-bottom: 50px;
+        }
+        section div.row .col-6 {
+            text-align: left;
+        }
+        section div.row .col-6.img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        section p {
+            padding: 20px 0;
+            margin-bottom: 0;
+        }
+        section button {
+            display: inline-block;
+            color: #3db1fa;
+            width: 198px;
+            height: 43px;
+            line-height: 43px;
+            text-align: center;
+            font-size: 16px;
+            border: 1px solid #c4e7fd;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            background-color: rgba(243, 243, 243, 0.99);
+            transition: all 0.5s;
+        }
+        section button:hover {
+            letter-spacing: 5px;
+            background-color: #2FC3BD;
+            color: white;
+            transform: translate(15px,0px);
+        }
+        /*swiper*/
+        .swiper-container {
+            margin-bottom: 50px;
+        }
+        /*aside*/
+        aside {
+            position: fixed;
+            right: 0;
+            top: 40%;
+            z-index: 2;
+            /*border:1px solid red;*/
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            width: 100px;
+            height: 130px;
+            background-image: url("images/weixin.png");
+            background-size: 100px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-clip: padding-box;
+        }
+        aside button{
+            background-color: transparent;
+            border: none;
+            font-size: 25px;
+        }
+        /*footer*/
+        footer {
+            width: 100%;
+            height: 80px;background-color: #4b545c;
+            color: white;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+</head>
+<body onresize="resize()" onload="resize()">
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand col-2" href="index.html">
+        <img src="images/logo.png" style="width: 180px">
+    </a>
+    <button class="navbar-toggler navbar-dark" data-toggle="collapse" data-target="#collapser">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapser">
+        <ul class="navbar-nav col-12">
+            <li class="nav-item">
+            <a class="nav-link active" href="index.html">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="product.html">产品介绍</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="company.html">公司简介</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="dynamic.html">新闻动态</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="supplierJoin.html">机构入驻</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">联系我们</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!--end nav-->
+<!--header-->
+<header>
+    <div class="container-fluid">
+        <div class="center">
+        <h2>驴行网络有限公司</h2>
+        <p>现在，中国旅游的主体市场尚处于发展期，但市场容量递增速度却很惊人。我们秉承着“大众创业，万众创新”，驴行网络科技有限公司全国实行“加盟做旅游，轻松创业，共享共赢”。
+            实现旅行社线上与线下相结合的附加式经营，让利获利渠道更广阔、获得的利润更客观、线下线上活动更吸引游客，为旅行社打造覆盖所在城市所有与旅游相关关的行业，以实现多渠道营利，多渠道宣传，多渠道拓客。
+            在这一时期驴行在线公司先行导入，抢先战略制高点，在全面考察市场的基础上，完成战略定位与模式设计，锁定了目标市场和消费群体，确定了宏伟的战略目标！驴行网络科技有限公司采用加盟加自营相结合的连锁拓展模式，通过各省分公司辐射各个城市。
+            同比个人的传统的小旅行社，加盟店具有免费公司运营培训，易操作，易管理，利润大和回报快的优点！</p>
+        </div>
+        <div class="container form">
+            <h2>驴行在线登陆</h2>
+            <form>
+                <div class="form-group">
+                    <label for="email">用户名:</label>
+                    <input type="email" class="form-control" id="email" placeholder="请输入用户名">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">密码:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="请输入密码">
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox"> Remember me
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">登陆</button>
+                <button type="submit" class="btn btn-primary">注册</button>
+            </form>
+        </div>
+    </div>
+</header>
+<!--button-->
+<div class="container-fluid button">
+        <div>
+            <a href=""><button class="btn">iPhone下载</button></a>
+        </div>
+        <div>
+            <a href="http://lxzx-resources.oss-cn-hangzhou.aliyuncs.com/apk/lxzaixian/android-release.apk"><button class="btn">Android下载</button></a>
+        </div>
+</div>
+<!--end button-->
+<article>
+    <div class="line"></div>
+    <h1 class="page-head">记录美好生活</h1>
+    <p class="page-span">去旅游找驴行在线</p>
+    <div class="container container-page">
+        <div class="row">
+            <div class="col">
+                <img src="images/banner_bg.jpg" style="width: 900px">
+            </div>
+        </div>
+    </div>
+    <div class="container container-foot">
+        <div class="row article-foot">
+            <div class="col-6 page-foot">
+                <div class="page-footLeft"><img src="images/img1@2x.png" style="width: 100px;height:100px"/></div>
+                <div class="page-footRight"><p>优化服务体验，我们是旅游行业三方平台</p></div>
+            </div>
+            <div class="col-6 page-foot">
+                <div class="page-footLeft"><img src="images/img2@2x.png" style="width: 100px;height:100px"/></div>
+                <div class="page-footRight"><p>2年时间深入户外行业，获取深度需求信息</p></div>
+            </div>
+        </div>
+    </div>
+</article>
+<!--swiper-->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="images/slider1.jpg">
+        </div>
+        <div class="swiper-slide">
+            <img src="images/slider2.jpg">
+        </div>
+        <div class="swiper-slide">
+            <img src="images/slider3.jpg">
+        </div>
+    </div>
+    <!--分页符-->
+    <div class="swiper-pagination"></div>
+</div>
+<!--end swiper-->
+<section class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="line"></div>
+            <h1>时尚 && 流行</h1>
+            <P>两年市场深入调查，不管是游客的需求还是机构的需求。我们在不断的换位思考让用户获得便捷、经济、生态、共享的方式生存。来维持和契合现在国家对旅游发展的规划。经营当下规划未来的模式下我们公司开发了“驴行在线”。</P>
+            <button>了解更多</button>
+        </div>
+        <div class="col-6 img">
+            <img src="images/c4.jpg"/>
+        </div>
+    </div>
+</section>
+<!--footer-->
+<footer>
+    <div>www.lxzaixian.cn &copy;  2018 All Rights Reserved</div>
+    <div>0573-89106131</div>
+</footer>
+<!--end footer-->
+<script>
+    // swiper
+    let mySwiper=new Swiper('.swiper-container',{
+        loop:true,
+        grabCursor:true,
+        keyboard:{enabled:true,},
+        autoplay:{delay:2500},
+        slidesPerView:3,
+        pagination: {
+            el:'.swiper-pagination',
+            dynamicBullets: true,
+        },
+    });
+    //end swiper
+    //navbar
+    $(()=>{
+        $(window).scroll(()=>{
+            let top=$(window).scrollTop();
+            // console.log(top);
+            if(top > 100){
+                $('.navbar').css({'opacity':'1'});
+            }else {
+                $('.navbar').css({'opacity':'0.5'});
+            }
+        })
+    });
+    //header
+
+    //根据窗口调整canvas的宽度
+    function resize(){
+        let w=$(window).width();
+        if(w<1000){
+            $('header div.center').css({'display':'none'});
+            $('header div.form').css({'width':'70%'});
+            $('nav .navbar-nav>li').css({'padding':'0 25px','line-height':'3em','font-size':'35px'})
+        }else{
+            $('header div.center').css({'display':'block','width':'60%'});
+            $('header div.form').css({'width':'40%'});
+            $('nav .navbar-nav>li').css({'padding':'0 25px','line-height':'2em'})
+        }
+    }
+    //header和canvas动态获取窗口高度
+    let height=$(window).height()-109;
+    $('header').css({'width':'100%','height': height+'px'});
+    // $('.navbar').attr({'width':resize() + 'px'});
+</script>
+</body>
+</html>

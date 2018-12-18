@@ -1,0 +1,33 @@
+{
+  "topNavs":[
+    {
+      "title":"首页","url":"index.html"
+    },
+    {
+      "title":"产品介绍","url":"product.html"
+    },
+    {
+      "title":"公司简介","url":"company.html"
+    },
+    {
+      "title":"新闻动态","url":"dynamic.html"
+    },
+    {
+      "title":"入驻","url":"supplierJoin.html"
+    },
+    {
+      "title":"联系我们","url":"contact.html"
+    }
+  ],
+  "news":[
+    {
+      "src":"images/c1.jpg","date":"2018.11.16","body":"旅游+体育：不仅要融合，更要求新求深"
+    },
+    {
+      "src":"images/c2.jpg","date":"2018.11.16","body":"2018中国·长宁蜀南竹海热气球天空飞行月将于11月举办"
+    },
+    {
+      "src":"images/c3.jpg","date":"2018.11.16","body":"新疆鄯善县今冬明春推出“十大最”活动"
+    }
+  ]
+}

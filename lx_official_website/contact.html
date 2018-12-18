@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>联系我们</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<style>
+    nav{
+        padding:28px 0px;
+        font-size:16px;
+        border-bottom:2px solid #5d5d5d;
+        z-index: 999;
+    }
+    nav .navbar-brand{
+        text-align: center;
+    }
+    .navbar-nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .navbar-nav .nav-item{
+        padding: 0 25px;
+        line-height: 2em;
+    }
+    nav .navbar-nav li:nth-child(6)>a, nav .navbar-nav li:nth-child(6)>a:hover{
+        color:#2FC3BD !important;
+    }
+    nav .navbar-nav>li>a{
+        font-size: 16px;
+        padding:0px;
+        color:#666666 !important;
+        white-space:nowrap;
+    }
+    nav .navbar-nav>li>a:hover{
+        color:#2FC3BD !important;
+    }
+    footer {
+        width: 100%;
+        height: 80px;background-color: #4b545c;
+        color: white;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    header{
+        height: 400px;
+        border:1px solid;
+        background: linear-gradient(0deg, #282b30, #505055);
+    }
+    header div.col:first-child{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        padding-left: 10%;
+        color: white;
+        height: 400px;
+    }
+    header p{
+        line-height: 25px;
+    }
+    header img{
+        height: 300px;
+        transition: all 0.5s ease;
+        margin-top: 50px;
+    }
+    header img:hover {
+        height: 350px;
+    }
+
+    /*div.container{*/
+        /*display: none;*/
+    /*}*/
+    div.about{
+        margin-top: 60px;
+        text-align: center;
+    }
+    div.about h2{
+        font-size: 40px;
+        color: #37474f;
+        margin-bottom: 10px;
+    }
+    div.about p{
+        font-size: 14px;
+        line-height: 28px;
+        color: #222;
+        margin-bottom: 16px;
+    }
+    div.about_img img{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    div.contact{
+        /*opacity: 0;*/
+        width: 100%;
+        background-color: #efefef;
+        margin: 50px auto 0 auto;
+    }
+    div.contact div.row{
+        padding-bottom: 50px;
+    }
+    div.contact div.col{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+    div.title{
+        text-align: center;
+        padding: 50px 0 60px 0;
+    }
+    div.title h1{
+        font-size: 35px;
+        color: #333;
+        line-height: 24px;
+        letter-spacing: 5px;
+    }
+    div.title p {
+        font-size: 16px;
+        color: #949494;
+        padding-top: 10px;
+    }
+    div.contact h4{
+        color: #333;
+        padding-bottom: 20px;
+        font-size: 20px;
+    }
+    div.contact p{
+        color: #7e7d7d;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    [type=text]{
+        border-right: none;
+        border-top: none;
+        border-left: none;
+        border-bottom: 1px solid #7e7d7d;
+        background-color: transparent;
+        width: 80%;
+        height: 50px;
+        line-height: 50px;
+        color: #7e7d7d;
+    }
+    textarea{
+        height: 110px;
+        width: 80%;
+        color: #7e7d7d;
+        background-color: transparent;
+        line-height: 30px;
+        border-right: none;
+        border-top: none;
+        border-left: none;
+        border-bottom: 1px solid #7e7d7d;
+    }
+    div.contact button{
+        width: 80%;
+        height: 40px;
+        border-radius: 8px;
+        border:1px solid #2FC3BD;
+        background-color: #2FC3BD;
+        color: white;
+        transition: all 0.5s;
+        letter-spacing: 5px;
+        position: relative;
+
+    }
+    div.contact button:hover{
+        border:1px solid #28a745;
+        background-color: #28a745;
+        letter-spacing: 8px;
+        transform: translate(0,10px);
+    }
+    .row{
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+</style>
+</head>
+<body onresize="f()" onload="f()">
+<nav class="navbar navbar-expand-lg bg-white navbar-light">
+    <a class="navbar-brand col-2" href="index.html">
+        <img src="images/logo.png" style="width: 180px"/>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav col-12">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="product.html">产品介绍</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="company.html">公司简介</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="dynamic.html">新闻动态</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="supplierJoin.html">机构入驻</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">联系我们</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<header>
+    <div class="row">
+        <div class="col">
+            <h1>魅力驴行</h1>
+            <p>我们专注于高质量高品质的互联网服务<br/>
+                本着"诚信为本，服务至上"的宗旨，为企业带来不一样的用户体验</p>
+        </div>
+        <div class="col">
+            <img src="images/about_pic.png"/>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="about">
+        <h2>关于我们</h2>
+        <p>驴行在线由嘉兴驴行网络科技有限公司发起成立的。</p>
+        <p>生态资源优势，创新运用O2O+UGC+产融服务+积分资产模式，深度融合消费资本论理论，开启消费资本时代；是中国首家互联网旅游供给侧改革理论实践示范平台。</p>
+        <p>驴行在线是践行分享经济与旅游供给侧改革的示范平台,培养新旅游（经济）人才，发展普惠金融，促进户外旅游经济转型、产业升级、促进共享经济发展。</p>
+        <p>我们有专业的技术，丰富的成功经验，周到的服务，使客户在与我们业务合作的过程中更加通畅与和谐。</p>
+    </div>
+    <div class="about">
+        <h2>公司文化</h2>
+        <p>坚持创新：驴行网络是一群充满活力和责任感的团队，敢于创新，不断超越自我</p>
+        <p>客户至上：重视客户体验，敏锐把握应用趋势，及时响应客户需求</p>
+        <p>追求价值：有态度的去做事情，让做的事情更有价值！</p>
+        <p>简单专注：大道至简，我们专注把简单的事情做好，把每一个普通改变</p>
+    </div>
+    <div class="about_img">
+        <img src="images/value.jpg">
+    </div>
+</div>
+<div class="contact">
+    <div class="title">
+        <h1>联系我们</h1>
+        <p>相信驴行的专业，您的一次联系，带给您不一样的旅游体验</p>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="">
+            <h4>嘉兴驴行网络科技有限公司</h4>
+            <p>地址：嘉兴市嘉善县上海人才创业园</p>
+            <p>手机：13735468547</p>
+            <p>邮箱：542845754@163.com</p>
+            <p>电话：0573-88845781</p>
+            <p>邮编：314000</p>
+            </div>
+        </div>
+        <div class="col">
+            <input type="text" placeholder="姓名"/>
+            <input type="text" placeholder="电话"/>
+            <input type="text" placeholder="邮箱"/>
+            <textarea placeholder="内容"></textarea>
+            <button>发送留言</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div>www.lxzaixian.cn &copy;  2018 All Rights Reserved</div>
+    <div>0573-89106131</div>
+</footer>
+<script>
+    function f() {
+        let width=$(window).width();
+        console.log(width);
+        if(width<1000){
+            $('nav .navbar-nav>li').css({'padding':'0 25px','line-height':'3em','font-size':'35px'})
+        }else{
+            $('nav .navbar-nav>li').css({'padding':'0 25px','line-height':'2em'})
+        }
+    }
+</script>
+</body>
+</html>
